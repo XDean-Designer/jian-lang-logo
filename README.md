@@ -21,24 +21,37 @@ npm run build
 
 ## 部署到 GitHub Pages
 
-1. 在 GitHub 创建仓库（例如 `jianlang-assets`）
-2. 推送代码到 `main` 分支
-3. 设置环境变量并构建：
+### 一键部署（推荐）
 
-```bash
-# 仓库名为 jianlang-assets 时
-set NEXT_PUBLIC_BASE_PATH=/jianlang-assets
-npm run build
+1. 在 [GitHub 新建仓库](https://github.com/new)（例如 `jianlang-assets`），**不要**勾选 README / .gitignore
+2. 在本项目目录执行（将 `YOUR_USERNAME` 和仓库名替换为你的）：
+
+```powershell
+cd "d:\剑琅资源站"
+git remote add origin https://github.com/YOUR_USERNAME/jianlang-assets.git
+git push -u origin main
 ```
 
-4. 将 `out/` 目录内容推送到 `gh-pages` 分支，或使用 GitHub Actions 自动部署
-5. 在仓库 Settings → Pages 中启用 GitHub Pages
+3. 打开仓库 **Settings → Pages → Build and deployment**，Source 选 **GitHub Actions**
+4. 推送后 Actions 会自动构建并部署，约 2–5 分钟完成
 
-### 使用 GitHub Actions（推荐）
+**公网地址：** `https://YOUR_USERNAME.github.io/jianlang-assets/`
+
+> 仓库名即 URL 路径。若仓库名不是 `jianlang-assets`，无需改代码——workflow 会自动设置 `NEXT_PUBLIC_BASE_PATH` 为 `/仓库名`。
+
+### 本地预览 GitHub Pages 路径
+
+```powershell
+$env:NEXT_PUBLIC_BASE_PATH="/jianlang-assets"
+npm run build
+npx serve out
+```
+
+访问 `http://localhost:3000/jianlang-assets/`
+
+### 使用 GitHub Actions（已配置）
 
 仓库已包含 `.github/workflows/deploy.yml`，推送至 `main` 后会自动构建并部署。
-
-若仓库名不是 `jianlang-assets`，请修改 workflow 中的 `NEXT_PUBLIC_BASE_PATH` 为你的仓库名（格式：`/仓库名`）。
 
 ## 项目结构
 
