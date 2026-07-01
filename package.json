@@ -1,0 +1,32 @@
+{
+  "name": "jianlang-assets",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "npm run prepare-assets && npm run prepare-banner && npm run prepare-videos && npm run prepare-guidelines && next build",
+    "prepare-assets": "node scripts/prepare-assets.mjs",
+    "prepare-assets:force": "node scripts/prepare-assets.mjs --force",
+    "prepare-banner": "node scripts/prepare-banner.mjs",
+    "prepare-videos": "node scripts/prepare-videos.mjs",
+    "prepare-guidelines": "node scripts/prepare-guidelines.mjs",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "next": "16.2.9",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.9",
+    "sharp": "^0.35.2",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
