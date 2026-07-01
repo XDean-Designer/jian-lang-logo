@@ -1,6 +1,9 @@
 import type { VideoCategory } from "./types";
 import { assetPath } from "./types";
 
+/** 首页「品牌视频」区块开关，改为 true 即可恢复显示 */
+export const SHOW_VIDEO_SECTION = false;
+
 export const videoCategory: VideoCategory = {
   slug: "brand-videos",
   title: "品牌视频",
