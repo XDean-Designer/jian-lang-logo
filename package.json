@@ -4,11 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run prepare-assets && npm run prepare-banner && npm run prepare-videos && npm run prepare-guidelines && next build",
+    "build": "npm run prepare-assets && npm run prepare-banner && npm run prepare-guidelines && next build",
     "prepare-assets": "node scripts/prepare-assets.mjs",
     "prepare-assets:force": "node scripts/prepare-assets.mjs --force",
     "prepare-banner": "node scripts/prepare-banner.mjs",
-    "prepare-videos": "node scripts/prepare-videos.mjs",
     "prepare-guidelines": "node scripts/prepare-guidelines.mjs",
     "start": "next start",
     "lint": "eslint"

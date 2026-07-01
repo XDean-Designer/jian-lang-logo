@@ -28,22 +28,6 @@ export type LogoCategory = {
   variants: LogoVariant[];
 };
 
-export type VideoVariant = {
-  id: string;
-  name: string;
-  description?: string;
-  file: string;
-};
-
-export type VideoCategory = {
-  slug: string;
-  title: string;
-  subtitle: string;
-  description: string[];
-  guidelines: string[];
-  variants: VideoVariant[];
-};
-
 export const BRAND = {
   name: "剑琅联盟",
   siteTitle: "剑琅联盟 · 品牌资源站",
